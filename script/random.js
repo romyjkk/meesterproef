@@ -1,4 +1,4 @@
-const ambience = new Audio("../sounds/underwater-ambience.mp3");
+const ambience = new Audio("./sounds/underwater-ambience.mp3");
 const playAudio = document.querySelector(".play-audio");
 const pauseAudio = document.querySelector(".pause-audio");
 
