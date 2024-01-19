@@ -1,0 +1,67 @@
+@import "../helpers/_variables";
+
+.below {
+  // height: 100vh;
+  // background: var(--ocean-darker);
+  background-attachment: fixed;
+  z-index: 2;
+  overflow-y: auto;
+  position: relative;
+  // opacity: 0;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease-in-out;
+  // scroll-snap-type: y mandatory;
+  h2 {
+    height: 100vh;
+  }
+  h3 {
+    height: 100vh;
+  }
+  article {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+  }
+  h2,
+  h3,
+  article {
+    display: flex;
+    align-items: start;
+    scroll-snap-align: center;
+  }
+  // h3:nth-of-type(2) {
+
+  // }
+  .in-view {
+    animation: bounce 2s ease-in-out, pulse 1s infinite;
+  }
+  #below-background {
+    background: rgb(0, 19, 37);
+    background: linear-gradient(
+      156deg,
+      rgba(0, 19, 37, 1) 0%,
+      rgba(0, 0, 2, 1) 45%
+    );
+  }
+  #below-background,
+  #waterparticles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    transition: 1s;
+    z-index: -1;
+  }
+}

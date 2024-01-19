@@ -1,0 +1,72 @@
+h3,
+h4,
+h5,
+p,
+button,
+a,
+li,
+em {
+  font-family: "Comfortaa", Helvetica, sans-serif;
+  color: var(--text-color);
+}
+
+em {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Koulen", Helvetica, sans-serif;
+}
+
+h2 {
+  font-size: 3em;
+  letter-spacing: 0.5em;
+  color: var(--text-color);
+  text-shadow: 0 0 8px var(--ocean-blue);
+  height: fit-content;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.5em;
+  letter-spacing: 0.1em;
+}
+
+h4 {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+}
+
+h5 {
+  font-size: 2.5em;
+}
+
+p,
+li,
+em {
+  font-size: 1.2em;
+}
+
+strong {
+  font-style: italic;
+}
+
+em {
+  color: #ab0000;
+}
+
+.popup {
+  .information {
+    .text {
+      em,
+      p,
+      ul li {
+        font-size: 1em;
+      }
+    }
+  }
+}

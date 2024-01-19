@@ -1,0 +1,50 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--ocean-darker);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+.scale {
+  transform: scale(1.3);
+}
+
+.index {
+  z-index: 4;
+}
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: flex;
+}
+
+.play-audio,
+.pause-audio {
+  cursor: pointer;
+  position: fixed;
+  z-index: 5;
+  background: none;
+  top: 1em;
+  left: 1em;
+  &:focus {
+    border: 1px solid black;
+  }
+}

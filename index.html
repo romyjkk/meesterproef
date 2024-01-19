@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conspiracy</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/CustomEase.min.js"></script>
+</head>
+<body>
+  <main>
+    <button class="pause-audio hidden"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg></button>
+    <button class="play-audio"><svg xmlns="http://www.w3.org/2000/svg" height="22" width="22" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM412.6 181.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5z"/></svg></button>
+    <section class="parallax-wrapper">
+      <article class="parallax">
+        <img class="foreground" src="images/long-foreground-iceberg-copy.png">
+        <img class="middle-1" src="images/small-iceberg-2.png">
+        <img class="middle-2" src="images/small-iceberg-3.png">
+        <h2 class="parallax-text">DIVE DEEP INTO THE OCEAN...</h2>        
+        <img class="background" src="images/background-middle.png">
+      </article>
+
+      <article class="overlay">
+        <h2>UNDERNEATH THE ICEBERG...</h2>
+      </article>
+    </section>
+
+    <section class="below">
+      <h2>WELCOME IN THE GREAT ABYSS...</h2>
+      <h3>Today you will learn about...</h3>
+      <h3>Conspiracy theories.</h3>
+      <article>
+        <p>Now what exactly is a conspiracy theory?</p>
+        <p>A conspiracy theory is the suggestion of a <strong>conspiracy</strong> (a secret plan or an agreement between people) as an explanation for something that has happened, even though other explanations are much more believable. Some conspiracy theories are based on facts and are partly true, but others are based on nothing but speculations. They can range from believeable to absurd (think about the flat earth theory). Someone who believes in these conspiracies, is called a conspiracy theorist.</p>
+      </article>
+      
+      <article>
+        <p>Today you have a chance to look at a few conspiracy theories, they've been split up in the following categories:</p>
+      
+        <ul>
+          <li>Politics</li>
+          <li>Outer space</li>
+          <li>Aviation</li>
+          <li>Our earth</li>
+        </ul>
+
+        <p>To keep track of the absurdity of some of these theories, there's an absurdity meter that's been added. You'll find it once you choose what you want to read about.</p>
+      </article>
+        
+      <div id="below-background"></div>
+      <div id="waterparticles"></div>
+    </section>
+
+    <section class="categories">
+      <h2 class="category-text">NOW PICK A CATEGORY...</h2>
+      
+      <section class="category-grid">
+        <article class="bubble-container container-1">
+          <button class="bubble background politics-button">
+            <h3>POLITICS</h3>
+          </button>
+
+          <article class="popup-container politic-container" id="politic-popup">
+            <article class="pizzagate bubble background">
+              <h4>PIZZAGATE</h4>
+            </article>
+
+            <article class="new-world-order bubble background">
+              <h4>NWO</h4>
+            </article>
+
+            <div id="popup-background"></div>
+          </article>
+        </article>
+
+        <article class="bubble-container container-2">
+          <button class="space bubble background">
+            <h3>OUTER SPACE</h3>
+          </button>
+          
+          <article class="popup-container space-container" id="space-popup">
+            <article class="moon bubble background">
+              <h4>MOON LANDING</h4>
+            </article>
+
+            <article class="area bubble background">
+              <h4>AREA 51</h4>
+            </article>
+
+            <div id="popup-background"></div>
+          </article>
+        </article>
+
+        <article class="bubble-container container-3">
+          <button class="aviation bubble background">
+            <h3>AVIATION</h3>
+          </button>
+
+          <article class="popup-container aviation-container" id="aviation-popup">
+            <article class="flight bubble background">
+              <h4>FLIGHT MH370</h4>
+            </article>
+
+            <article class="chemtrails bubble background">
+              <h4>CHEMTRAILS</h4>
+            </article>
+
+            <div id="popup-background"></div>
+          </article>
+        </article>
+        <article class="bubble-container container-4">
+          <button class="earth bubble background">
+            <h3>EARTH</h3>
+          </button>
+
+          <article class="popup-container earth-container" id="earth-popup">
+            <article class="hollow bubble background">
+              <h4>HOLLOW EARTH</h4>
+            </article>
+
+            <article class="bermuda bubble background">
+              <h4>BERMUDA TRIANGLE</h4>
+            </article>
+
+            <div id="popup-background"></div>
+          </article>
+        </article>
+      </section>
+
+      <p class="scroll">And when you're done, scroll down...</p>
+    </section>
+
+    <section class="footer">
+      <h3>SO... WHAT DO YOU THINK?</h3>
+      <h3>ARE YOU... CONFUSED? DISTURBED? SCEPTIC?</h3>
+      <h3>YOU SHOULD BE.</h3>
+      <p>Conspiracy theories spread like wildfire on social media platforms. When you engage with content, this can lead to the creation of a filter bubble. The content shown to you will match your interests, based on your previous interactions. The more you engage with this content, the deeper you are sucked into this bubble, together with like-minded users. This can reinforce the beliefs you have, even if they’re not actually real.</p>
+      <p>These filter bubbles are dangerous. There’s many children and teenagers, who still lack critical thinking. They may end up in a bubble like that and belief almost everything. This can also happen to adults. Be careful, don’t just believe something you see on social media because the poster says that it’s true. Do your own research if you must. Remember, the depths of the iceberg on social media can be deceptive, and what lies beneath the surface may not always be the truth.</p>
+    
+      <section class="footer-animation">
+        <article class="bubble background"></article>
+        <article class="bubble background"></article>
+        <article class="bubble background"></article>
+        <article class="bubble background"></article>
+        <article class="bubble background"></article>
+        <article class="bubble background"></article>
+        <article class="bubble background"></article>
+        <article class="bubble background"></article>
+        <article class="filter-bubble background"></article>
+
+        <h5 class="trapped">HERE YOU ARE, TRAPPED IN A BUBBLE...</h5>
+        <button class="reload">RELOAD</button>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="script/main.js"></script>
+  <script src="script/parallax.js"></script>
+  <script src="script/intersection.js"></script>
+  <script src="script/particles.js"></script>
+  <script src="script/animations.js"></script>
+  <script src="script/category.js"></script>
+  <script src="script/random.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/CustomEase.min.js"></script> -->
+
+<!-- popup 1: pizzagate -->
+<section class="pizzagate-popup popup hidden">
+  <button class="close-pizzagate"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+  <article class="information bubble background">
+    <article class="text">
+      <h3>PIZZAGATE</h3>
+      <h4>ABSURDITY: 5/5</h4>
+      <article class="paragraphs">
+        <p>This conspiracy theory gained popularity during the 2016 US presidential election. John Podesta’s (Hillary Clinton’s campaign manager) personal email got hacked and emails got leaked. Conspiracy theorist claimed certain phrases in the emails were coded messages related to a child sex-trafficking ring. They also believed certain restaurants were involved, including Comet Ping Pong, a pizzeria. This was supposedly the center of the child sex-trafficking ring.</p>
+        <p>Members of the alt-right movement (very far right) spread the conspiracy theory on different social media platforms, like 4chan and Reddit. This led a man to travel to the Comet Ping Pong restaurant with a firearm and he fired shots inside, because he believed there were children being kept in their basement and he wanted to investigate. He was later sentenced to four years in prison.</p>
+        <p>The conspiracy theory has been debunked after thorough investigation by law enforcement.</p>
+      </article>
+
+    </article>
+    
+  </article>
+  <figure class="images">
+      <img src="images/pizzagate/pizzagate1.jpg">
+      <img src="images/pizzagate/pizzagate3.jpg">
+      <img src="images/pizzagate/pizzagate2.jpg">
+      <img src="images/pizzagate/pizzagate4.jpg">
+  </figure>
+</section>
+
+<!-- popup 2: NWO -->
+<section class="nwo-popup popup hidden">
+  <button class="close-nwo"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+  <article class="information bubble background">
+    <article class="text">
+      <h3>NEW WORLD ORDER</h3>
+      <h4>ABSURDITY: 5/5</h4>
+      <article class="paragraphs">
+        <p>This conspiracy theory is connected to the Illuminati. The Illuminati was actually real, back in the 18th century, but they’ve disbanded since. In modern day conspiracy theories the Illuminati is often seen as a group of shadowy, powerful people that manipulates global events to establish a New World Order. This is imagined as a secret totalitarian (a political system that prohibits all opposition parties. The government has total control over the people) world government.
+          It’s a very broad theory, so here are some key aspects:</p>
+
+        <ul>
+          <li><strong>Elites</strong>A small group of very powerful and influential individuals are working to establish a totalitarian government. They’re also reffered to as the “global elite” or “shadow government”.</li>
+          <li><strong>Manipulation of events</strong>Major global events, like wars and even pandemics, like covid-19, are caused by this government.</li>
+          <li><strong>One world government</strong>This government will be for the entire world. They’re oppressive and undemocratic, and there will be no individual freedom.</li>
+        </ul>
+      </article>
+
+    </article>
+    
+  </article>
+  <figure class="images">
+      
+      <img src="images/nwo/nwo2.jpeg">
+      <img class="exception" src="images/nwo/nwo4.jpg">
+      <img src="images/nwo/nwo1.jpg">
+  </figure>
+</section>
+
+  <!-- popup 3: moon landing faked -->
+  <section class="moon-popup popup hidden">
+    <button class="close-moonlanding"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+    <article class="information bubble background">
+      <article class="text">
+        <h3>THE MOON LANDING WAS FAKED</h3>
+        <h4>ABSURDITY: 5/5</h4>
+        <article class="paragraphs">
+          <p>This conspiracy theory claims that the moon landing by Apollo 11 in 1969 was a hoax by NASA and the US government to win the space race (a competition between the US and the Soviet Union. They both tried to achieve the most superior technology). There’s a lot of evidence that it, in fact, did happen (third party evidence included), but believers don’t want to hear it. A few reasons they don’t believe it:</p>
+          <ul>
+            <li>The flag seems to ripple in the photograph. Due to the absence of an atmosphere, the flag should not ripple.</li>
+            <li>There’s no stars visible in the photographs.</li>
+            <li>There’s anomalies in the photographs and videos, for example the shadows and lighting.</li>
+          </ul>
+        </article>
+      </article>
+      
+    </article>
+    <figure class="images">
+      <img src="images/moonlanding/moonlanding1.jpg">
+      <img src="images/moonlanding/moonlanding2.avif">
+      <img src="images/moonlanding/moonlanding3.jpg">
+      <img src="images/moonlanding/moonlanding4.webp">
+    </figure>
+  </section>
+
+  <!-- popup 4: area 51 -->
+  <section class="area-popup popup hidden">
+    <button class="close-area"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+    <article class="information bubble background">
+      <article class="text">
+        <h3>AREA 51 CONSPIRACIES</h3>
+        <article class="paragraphs">
+          <p>Area 51 is a development and testing facility owned by the US Air Force, located near Lincoln Country, Nevada. What exactly goes on there is not made public, and due to this secrecy and high security around the base there’s a lot of conspiracy theories surrounding it. Some of these theories are:</p>
+          <ul>
+            <li><strong>Extraterrestrial technology & UFOs (absurdity: 3/5)</strong> This theory suggests that Area 51 studies extraterrestrial technology. It’s believed crashed UFOs and their occupants are being held for research.</li>
+            <li><strong>Government cover-ups (absurdity: 3/5)</strong> Some theorists belief that the US government and agencies like the CIA cover things up at Area 51. Not just extraterrestrial-related but also advanced technology and weaponry.</li>
+            <li><strong>Time travel and teleportation (absurdity: 5/5)</strong> Other theorists think that Area 51 is involved in time travel experiments or teleportation technology.</li>
+            <li><strong>Mind control experiments (absurdity: 5/5)</strong> Another theory is that Area 51 is involved in mind control experiments, with the goal to manipulate the behavior of humans.</li>
+          </ul>
+        </article>
+      </article>
+      
+    </article>
+    <figure class="images">
+      <img src="images/area51/area1.jpg">
+      <img src="images/area51/area2.jpg">
+      <img src="images/area51/area3.jpeg">
+      <img src="images/area51/area4.webp">
+    </figure>
+  </section>
+
+  <!-- popup 5: flight mh370 -->
+  <section class="flight-popup popup hidden">
+    <button class="close-flight"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+    <article class="information bubble background">
+      <article class="text">
+        <h3>FLIGHT MH370</h3>
+        <article class="paragraphs">
+          <p>On March 8th, 2014 Malaysia Airlines Flight 370 dissapeared from the radar around 40 minutes after take off. There were 239 people on board of this flight. It was tracked by the Malaysian military’s radar system, where it was seen changing its course, going westward. It dissapeared again after this and hasn’t been found. Naturally, there’s a lot of conspiracy theories about what exactly happened. Here’s a few of them:</p>
+          <ul>
+            <li><strong>Hijacking (absurdity: 1/5)</strong>
+              Some believe the plane was hijacked. The hijackers could have flown the plane to a remote island and landed it there, which would explain the sudden switch of course.</li>
+            <li><strong>Pilot suicide (absurdity: 2/5)</strong>
+              Another explanation could be that the pilot commited suicide and took everyone with him. Some things happened in his personal life. The family denied the possibility of his suicide, though.</li>
+            <li><strong>Alien abduction (2/5)</strong>
+              A man received weird voicemails and texts with coordinates in March of 2018. The coordinates turned out to be close to where flight MH370 vanished and the voicemails consisted of messages in the NATO alphabet (Alpha = A, Bravo = B, etc). After it was been decoded it turned out to be talking about Alien abduction. After investigation, it’s been dismissed as a prank or hoax.</li>
+          </ul>
+          <p>Even though it’s not been proven, assumptions are made that all 239 people on board aren’t alive anymore. May they rest in peace.</p>
+        </article>
+      </article>
+      
+    </article>
+    <figure class="images">
+      <img src="images/mh370/flight1.jpg">
+      <img src="images/mh370/flight2.png">
+      <img src="images/mh370/flight3.webp">
+      <img src="images/mh370/flight4.jpg">
+    </figure>
+  </section>
+
+    <!-- popup 6: chemtrails -->
+    <section class="chemtrails-popup popup hidden">
+      <button class="close-chemtrails"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+      <article class="information bubble background">
+        <article class="text">
+          <h3>CHEMTRAILS</h3>
+          <h4>ABSURDITY: 5/5</h4>
+          <article class="paragraphs">
+            <p>This theory suggests that, the condensation trails left by airplanes in the sky, are actually trails consisting of chemical, or biological agents. Some reasons why this may be done:</p>
+            <ul>
+              <li>Solar radiation management: a type of climate engineering that makes sunlight reflect back to outer space to limit human-caused climate change;</li>
+              <li>Weather modification: purposefully manipulating the weather;</li>
+              <li>Psychological manipulation;</li>
+              <li>Human population control: managing the growth rate of the human population;</li>
+              <li>Or biological/chemical warfare: using biological/chemical toxins to harm as an act of war.</li>
+            </ul>
+            <p>It’s been debunked by scientists, however. The chemtrails are nothing but water-based.</p>
+          </article>
+          </article>
+        
+      </article>
+      <figure class="images">
+        <img src="images/chemtrails/chemtrails1.jpg">
+        <img class="exception" src="images/chemtrails/chemtrails4.jpg">
+        <img src="images/chemtrails/chemtrails2.png">
+        
+      </figure>
+    </section>
+
+  <!-- popup 7: hollow earth -->
+  <section class="hollow-popup popup hidden">
+    <button class="close-hollow"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+    <article class="information bubble background">
+      <article class="text">
+        <h3>HOLLOW EARTH THEORY</h3>
+        <h4>ABSURDITY: 5/5</h4>
+        <article class="paragraphs">
+          <p>The hollow earth conspiracy theory suggests that the earth is not a solid sphere, but actually hollow, with the openings being at the North and South pole. It’s long been disproven, but interesting regardless.</p>
+          <p>The theory was popular in the 17th and 18th century, since they weren’t really able to explore the interior part of the earth. Some claimed that there’s a sun within the earth, providing warmth and light, which would mean it would be possible for life to exist inside.</p>
+          <p>Theorists believe that the walls of the earth are around 1300km thick, with holes reaching 2250km across. The edges of these holes curve smoothly, so you won’t notice going in there. The reason the holes have never been seen from up above, is because pilots follow their compasses, which are following the holes ‘magnetic rim’. They never fly over the holes themself.</p>
+          <p>An example of evidence against this theory is the studying of seismic waves. Seismic waves are waves that travel through the earth and are caused by the release of energy from an earthquake or different explosion types. The time these waves take to travel through and around the earth indicates that it’s filled with rock and other materials, not hollow in the slightest.</p>
+        </article>
+
+      </article>
+      
+    </article>
+    <figure class="images">
+      <img src="images/hollowearth/hollow1.webp">
+      <img src="images/hollowearth/hollow2.webp">
+      <img src="images/hollowearth/hollow3.webp">
+      <img src="images/hollowearth/hollow4.jpg">
+    </figure>
+  </section>
+
+  <!-- popup 8: bermuda triangle -->
+  <section class="bermuda-popup popup hidden">
+    <button class="close-bermuda"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f1f1f1" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+    <article class="information bubble background">
+      <article class="text">
+        <h3>THE BERMUDA TRIANGLE</h3>
+        <article class="paragraphs">
+          <p>The Bermuda Triangle is a triangle located in the western part of the North Atlantic Ocean. It’s also called the ‘Devil’s Triangle’, and is a region where many aircrafts and ships are said to have dissapeared, under circumstances that aren’t explainable. Ofcourse there’s many conspiracy theories related to this triangle, here are some of them:</p>
+          <ul>
+            <li><strong>Alien abductions (absurdity: 5/5)</strong>
+              Some theorists brought up the suggestion that aliens are responsible for the dissapearances in the Bermuda Triangle. They might have abducted ships or aircrafts, using their technology.</li>
+            <li><strong>Time warps (absurdity: 5/5)</strong>
+              Another theory is that there are time warps, wormholes, or vortexes located in the Bermuda Triangle. They could have transported the missing ships and aircrafts to other dimensions or time periods.</li>
+            <li><strong>Government experiments (absurdity: 5/5)</strong>
+              Governments may have conducted experiments in the region where the Bermuda Triangle is located, which could have caused the dissapearances. The experiments could involve advanced technology or weapons.</li>
+            <li><strong>Methane Hydrate Explosions (absurdity: 2/5)</strong>
+              This theory is more scientifically grounded. It suggests that methane hydrate deposits on the seafloor in the region could release methane gas into the water, which would reduce buoyancy and cause ships to sink. This is a real phenomenom, but still not convincing enough.</li>
+            </ul>
+          </article>
+      </article>
+      
+    </article>
+    <figure class="images">
+      <img src="images/bermuda/bermuda1.jpg">
+      <img src="images/bermuda/bermuda2.webp">
+      <img src="images/bermuda/bermuda3.jpeg">
+      <img src="images/bermuda/bermuda4.webp">
+    </figure>
+  </section>
+</body>
+</html>

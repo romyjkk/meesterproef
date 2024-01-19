@@ -1,0 +1,200 @@
+@import "../helpers/_variables";
+
+.categories {
+  position: relative;
+  z-index: 2;
+  .category-grid {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    .bubble-container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      .bubble {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        // pointer-events: stroke;
+        position: relative;
+        border-radius: 100%;
+        aspect-ratio: 1/1;
+        width: 60%;
+        z-index: 2;
+        background: radial-gradient(
+          circle at bottom,
+          #1058b0,
+          #0f5cbc 10%,
+          #093b79 80%,
+          #093b79 100%
+        );
+        // transition: 0.5s;
+        h3 {
+          opacity: 0;
+          transition: 0.5s;
+          letter-spacing: 0.1em;
+          text-align: center;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 1%;
+          left: 5%;
+          width: 90%;
+          height: 90%;
+          border-radius: 100%;
+          background: radial-gradient(
+            circle at left top,
+            #c8e2ff,
+            #ffffff00 58%
+          );
+          -webkit-filter: blur(5px);
+          filter: blur(5px);
+          z-index: 2;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          display: none;
+          top: 5%;
+          left: 10%;
+          width: 80%;
+          height: 80%;
+          border-radius: 100%;
+          -webkit-filter: blur(1px);
+          filter: blur(1px);
+          z-index: 2;
+          -webkit-transform: rotateZ(-30deg);
+          transform: rotateZ(-30deg);
+        }
+      }
+      .bubble.background {
+        background: radial-gradient(
+          circle at 50% 55%,
+          #304f78,
+          #254167 40%,
+          #1f395c 60%,
+          #0f1f36
+        );
+        // background: radial-gradient(
+        //   circle at 50% 55%,
+        //   #87a7ce,
+        //   #769ccb 40%,
+        //   #5c8bc5 60%,
+        //   #84a8d4
+        // );
+        &::before {
+          filter: blur(3px);
+          height: 80%;
+          width: 40%;
+          background: radial-gradient(
+            circle at 130% 130%,
+            #9e525200 0,
+            #ffffff00 46%,
+            #466793 50%,
+            #466793 58%,
+            #ffffff00 60%,
+            #ffffff00 100%
+          );
+          transform: translateX(131%) translateY(58%) rotateZ(168deg)
+            rotateX(10deg);
+        }
+        &::after {
+          display: block;
+          background: radial-gradient(
+            circle at 50% 80%,
+            #19538a00,
+            #ffffff00 74%,
+            #466793 80%,
+            #466793 84%,
+            #ffffff00 100%
+          );
+        }
+        &:hover,
+        &:focus {
+          box-shadow: 0 0 30px #213b5e;
+        }
+        &:hover h3,
+        &:focus h3 {
+          opacity: 1;
+        }
+      }
+      .popup-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .bubble {
+          width: 35%;
+          padding: 1em;
+          z-index: 1;
+          position: absolute;
+
+          &.pizzagate,
+          &.new-world-order,
+          &.moon,
+          &.area,
+          &.flight,
+          &.chemtrails,
+          &.hollow,
+          &.bermuda {
+            left: 6em;
+            top: 12em;
+          }
+          h4 {
+            opacity: 0;
+            transition: 0.5s;
+            text-align: center;
+            z-index: 3;
+          }
+          &:hover h4,
+          &:focus h4 {
+            opacity: 1;
+          }
+        }
+        // #popup-background {
+        //   width: 100vw;
+        //   height: 100vh;
+        //   position: fixed;
+        //   bottom: 0;
+        //   background: #000000cf;
+        //   left: 0;
+        // }
+      }
+    }
+    .container-1 {
+      animation: bubbles-1 15s infinite ease-in-out;
+    }
+    .container-2 {
+      animation: bubbles-2 13s infinite ease-in-out;
+    }
+    .container-3 {
+      animation: bubbles-3 10s infinite ease-in-out;
+    }
+    .container-4 {
+      animation: bubbles-4 18s infinite ease-in-out;
+    }
+  }
+  .scroll {
+    cursor: default;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0.1;
+    transition: 0.5s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .category-text {
+    transition: 0.5s;
+  }
+}

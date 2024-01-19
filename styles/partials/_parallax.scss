@@ -1,0 +1,293 @@
+@import "../helpers/_variables";
+
+.parallax-wrapper {
+  display: inline-block;
+  background: var(--ocean-darker);
+  height: 2000px;
+  z-index: 3;
+  .parallax {
+    position: relative;
+
+    .foreground,
+    .middle-1,
+    .middle-2,
+    .parallax-text {
+      position: absolute;
+    }
+    .foreground {
+      width: 100vw;
+      top: 30em;
+      z-index: 1;
+    }
+    .middle-1 {
+      width: 30%;
+      top: 13em;
+      left: -5em;
+      filter: drop-shadow(0px 10px 15px var(--ocean-blue));
+    }
+    .middle-2 {
+      width: 35%;
+      right: 3em;
+      top: 15em;
+      filter: drop-shadow(0px 10px 15px var(--ocean-blue));
+    }
+    .parallax-text {
+      top: 1em;
+      width: 100%;
+      text-align: center;
+    }
+    .background {
+      width: 100vw;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+// .parallax-wrapper {
+//   height: 100vh;
+//   overflow-y: hidden;
+//   overflow-x: hidden;
+//   // perspective: 10px;
+//   .parallax {
+//     position: relative;
+//     display: flex;
+//     justify-content: center;
+//     height: 100%;
+//     z-index: -1;
+//     .background,
+//     .foreground {
+//       position: absolute;
+//       object-fit: cover;
+//     }
+
+//     .foreground {
+//       width: 120%;
+//       height: auto;
+//       bottom: 0em;
+//       right: 0;
+//       z-index: 1;
+//     }
+//     .parallax-text {
+//       transform: translate(0, 2em);
+//     }
+//     .background {
+//       top: 0;
+//       width: 100%;
+//       height: 100vh;
+//       z-index: -2;
+//     }
+//   }
+// }
+
+// .overlay {
+//   height: 100vh;
+//   background: var(--ocean-darker);
+// }
+
+// .wrapper {
+//   padding: 0;
+//   height: 100vh;
+//   overflow-y: visible;
+//   overflow-x: hidden;
+//   perspective: 10px;
+// }
+
+// header {
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100%;
+//   transform-style: preserve-3d;
+//   z-index: -1;
+// }
+
+// .background {
+//   transform: translateZ(-10px) scale(2);
+// }
+
+// .foreground {
+//   width: 20em;
+//   transform: translateZ(-5px) scale(1.5);
+// }
+
+// .background,
+// .foreground {
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+//   object-fit: cover;
+//   z-index: -1;
+// }
+
+// .wrapper {
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   perspective: 10px;
+//   height: 100vh;
+//   header {
+//     position: relative;
+//     display: flex;
+//     justify-content: center;
+//     // align-items: center;
+//     height: 100%;
+//     width: 100vw;
+//     transform-style: preserve-3d;
+//     z-index: -1;
+//     .background,
+//     .middle,
+//     .foreground-cover {
+//       // height: 100%;
+//       width: 100vw;
+//       object-fit: cover;
+//       z-index: -1;
+//     }
+//     .iceberg {
+//       filter: drop-shadow(0px 10px 15px var(--ocean-blue));
+//     }
+//     .background {
+//       position: absolute;
+//       background-position: top;
+//       z-index: -2;
+//       transform: translateZ(-10px) scale(2);
+//     }
+//     .middle {
+//       position: absolute;
+//       width: 60%;
+//       top: -2em;
+//       height: auto;
+//       transform: translateZ(-8px) scale(1.8);
+//     }
+//     .foreground-container {
+//       width: 100%;
+//       transform: translateZ(-5px) scale(1.5);
+//       .foreground-1 {
+//         width: 35%;
+//         height: auto;
+//         position: absolute;
+//         bottom: 5em;
+//         left: 5em;
+//         filter: drop-shadow(0px 10px 15px var(--ocean-blue));
+//       }
+//       .foreground-2 {
+//         width: 30%;
+//         height: auto;
+//         position: absolute;
+//         bottom: 2em;
+//         right: 0;
+//         filter: drop-shadow(0px 10px 15px var(--ocean-blue));
+//       }
+//     }
+
+// .foreground-1 {
+// width: 25%;
+// height: auto;
+// bottom: 4em;
+// left: -2em;
+// transform: translateZ(-5px) scale(1.5);
+// }
+// .foreground-2 {
+// width: 25%;
+// height: auto;
+// bottom: 0;
+// right: -16em;
+// transform: translateZ(-5px) scale(1.5);
+// }
+// .iceberg {
+//   position: absolute;
+//   filter: drop-shadow(0px 10px 15px var(--ocean-blue));
+// }
+// .foreground-iceberg {
+//   position: absolute;
+//   width: 65%;
+//   top: 3em;
+// }
+// .foreground-1 {
+//   width: 30%;
+//   top: 20em;
+//   left: 5em;
+// }
+// .foreground-2 {
+//   width: 30%;
+//   right: 0;
+//   top: 35em;
+// }
+// .background {
+//   width: 100vw;
+//   transform: translateZ(-10px) scale(2);
+// }
+// .middle {
+//   transform: translateZ(-8px) scale(1.8);
+// }
+// .foreground {
+//   transform: translateZ(-5px) scale(1.5);
+// }
+//     h2 {
+//       position: absolute;
+//       width: 100%;
+//       top: 0.5em;
+//     }
+//   }
+//   .overlay {
+//     background: var(--ocean-darker);
+//     height: 100vh;
+//   }
+// }
+
+// .wrapper {
+//   height: 100vh;
+//   overflow-y: auto;
+//   overflow-x: hidden;
+//   perspective: 10px;
+//   header {
+//     position: relative;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100%;
+//     transform-style: preserve-3d;
+//     z-index: -1;
+//     .background,
+//     .foreground {
+//       position: absolute;
+//       height: 100%;
+//       width: 100vw;
+//       object-fit: cover;
+//       z-index: -1;
+//     }
+//     .background {
+//       transform: translateZ(-10px) scale(2);
+//     }
+//     .foreground {
+//       width: 90%;
+//       height: auto;
+//       transform: translateZ(-5px) scale(1.5);
+//       bottom: -15em;
+//       right: -20em;
+//     }
+//   }
+//   .overlay {
+//     min-height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     h2 {
+//       position: absolute;
+//       width: 100%;
+//     }
+//     img {
+//       width: 100vw;
+//     }
+//   }
+//   h2 {
+//     color: #ffffff;
+//     text-shadow: 0 0 8px var(--ocean-blue);
+//     height: fit-content;
+//     text-align: center;
+//   }
+// }
